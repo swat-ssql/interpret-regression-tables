@@ -1,0 +1,29 @@
+## Step 1: Statistical Significance {.unnumbered}
+
+
+```{r}
+library(tidyverse)
+library(stargazer)
+load("countyData_1k.rda")
+```
+
+<center>
+```{r, results='asis'}
+trump_income <- lm(rShift ~ medianIncome16_1k, data = countyData, weight = popEstimate16)
+
+stargazer(trump_income, type = 'html',
+          keep.stat = c("n", "adj.rsq"),
+          star.cutoffs = c(0.05),
+          covariate.labels = c("median income (&#36;1,000s)", "Constant"),
+          dep.var.labels = "% shift to Trump, 2012-2016",
+          dep.var.caption = "", 
+          notes="<span>&#42;</span> p<0.05",
+          notes.append=F)
+```
+</center>
+
+
+-   The coefficient/slope for county income (-0.158) is negative and is starred.
+-   The star indicates that we believe that the direction of the best fit line/the sign of the coefficient is negative with at least 95\% confidence.
+-   Note 1: You can roughly calculate whether the coefficient/slope will be starred by using the number in parentheses below the coefficient/slope. This is the **standard error**, a measure of confidence in the coefficient. If 2\*(standard error) \< \|slope\|, then there is likely to be a star on the coefficient/slope.
+-   Note 2: In general, the coefficient for the constant term is ignored regardless of its statistical significance.
