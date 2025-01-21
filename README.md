@@ -1,6 +1,4 @@
-# interpret-regression-tables
-
-Interpreting and Visualizing Regression Tables
+# Interpreting and Visualizing Regression Tables
 
 This document provides a basic understanding of regression tables commonly presented in quantitative papers and highlights common heuristics for interpreting those tables. It is directed towards those with
 
