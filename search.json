@@ -1,0 +1,130 @@
+[
+  {
+    "objectID": "index.html",
+    "href": "index.html",
+    "title": "Interpreting and Visualizing Regression Tables",
+    "section": "",
+    "text": "Audience\nThis document provides a basic understanding of regression tables commonly presented in quantitative papers and highlights common heuristics for interpreting those tables. It is directed towards those with\n\nno background in statistics,\nan introductory background in statistics, or\nan interest in 3 dimensional visualizations of regression surfaces and marginal effects (see the section on multiple linear regression ).\n\nIt is intended to augment, not replace, statistics classes. The reader should have particular caution around the meaning of statistical significance, a complex concept that generally requires multiple statistics courses to adequately understand.",
+    "crumbs": [
+      "Audience"
+    ]
+  },
+  {
+    "objectID": "01_steps_regression.html",
+    "href": "01_steps_regression.html",
+    "title": "Steps for scanning regression tables",
+    "section": "",
+    "text": "This is a typical, if simple, regression table for an ordinary least squares regression (OLS).\n\n\n\n\n\n\n\n\n\n\n% shift to Trump, 2012-2016\n\n\n\n\n\n\n\n\nCounty median income ($1,000s)\n\n\n-0.158*\n\n\n\n\n\n\n(0.006)\n\n\n\n\n\n\n\n\n\n\nConstant\n\n\n8.337*\n\n\n\n\n\n\n(0.351)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservations\n\n\n3,111\n\n\n\n\nAdjusted R2\n\n\n0.203\n\n\n\n\n\n\n\n\nNote:\n\n\n* p&lt;0.05\n\n\n\n\nThe steps required to understand it are summarized below, with fuller explanations in the next sections.\nStep 0: Substantive Meaning\n\nKnow what the variables mean and what the unit of observation is. In the table above, the variables are the % shift to Trump and county median income. The unit of observation is one county in the United States.\n\nStep 1: Statistical Significance\n\nIdentify coefficients with a star. In the table above, \\(-0.158\\) is a coefficient. For the OLS regression with one variable presented above, \\(-0.158\\) represents the slope in the single variable linear equation. In other types of regressions, a coefficient is similar to a slope, but not identical to one.\nThe star is a very approximate indicator of coefficients that are worth paying attention to. These are called statistically significant coefficients.\n\nStep 2: Direction of the Effect\n\nLook at the direction of the coefficient/slope. Is it positive or negative?\nWe can only be confident in the direction of the effect if the coefficient is statistically significant.\n\nStep 3: Substantive Significance/Effect Size\n\nSubstantive significance indicates whether we care about the size of the effect/coefficient. It is not the same as statistical significance, and is at least as important as statistical significance.\nThe coefficient \\(-0.158\\) indicates our best guess about the effect size. This can be translated into an indication of substantive significance, but is never more than a best guess.\nThe next sections describe how to interpret coefficients in linear regressions. For other regressions, rely on the author to interpret the substantive meaning of the reported coefficients.",
+    "crumbs": [
+      "Steps for scanning regression tables"
+    ]
+  },
+  {
+    "objectID": "02_regression_equation.html",
+    "href": "02_regression_equation.html",
+    "title": "A simple linear regression",
+    "section": "",
+    "text": "A simple linear regression uses the following notation:\n\n\\(y\\) is the outcome/dependent variable,\n\\(x\\) is the explanatory/independent variable,\n\\(\\beta\\) is the slope, also called a coefficient,\n\\(\\beta_0\\) is the y-intercept, and\n\\(\\epsilon\\) is the error term that captures our uncertainty over the estimated values.\n\nThe equation can be expressed as:\n\\[\\begin{align}\ny &= \\beta x + \\beta_0 + \\epsilon.\n\\end{align}\\]\nThis is similar to a standard linear equation, with new notation (i.e. \\(\\beta_0\\) instead of \\(c\\) or \\(b\\) for the y-intercept/constant).\nNote that there are many nonlinear regression functions that are more complex than a straight line in one dimension. A slightly more complex function, called multiple linear regression, will be covered in the second part of this document.",
+    "crumbs": [
+      "A simple linear regression"
+    ]
+  },
+  {
+    "objectID": "03_step0_substantive_meaning.html",
+    "href": "03_step0_substantive_meaning.html",
+    "title": "Step 0: Substantive Meaning",
+    "section": "",
+    "text": "This section shows key components involved in the substantive meaning of a regression: the equation, the variables, and the unit of observation.\nThe example below shows the relationship between each county’s shift towards Donald Trump in 2016 and its median income. The simple linear regression function used to estimate this relationship can be expressed as\n\\[\\begin{align}\ny &= \\beta x + \\beta_0 + \\epsilon \\\\\n\\text{shift to Trump} & = \\beta * \\text{median income (\\$1,000s)} + \\beta_0+ \\epsilon,\n\\end{align}\\]\nwhere\n\nthe unit of observation is one county,\n\\(y\\) represents the shift to Trump,\n\nHow much more the county voted for Trump in 2016 than it voted for Romney in 2012.\n\n\\(x\\) represents median income ($1,000s).\n\nCounty median income is expressed in units of $1,000. That is, a county with a $50,000 median income will be coded as 50. This is done to improve your ability to read the regression results.\n\n\nThe interactive graphic below shows each county as well as the best fitting regression line. The gray area around the regression line represents an idea of the statistical significance of the effect of county median income.",
+    "crumbs": [
+      "A simple linear regression",
+      "Step 0: Substantive Meaning"
+    ]
+  },
+  {
+    "objectID": "04_step1_stat_sig.html",
+    "href": "04_step1_stat_sig.html",
+    "title": "Step 1: Statistical Significance",
+    "section": "",
+    "text": "This section shows how to identify statistically significant coefficients, and a basic idea of how to interpret that statistical significance.\n\n\n\n\n\n\n\n\n\n\n% shift to Trump, 2012-2016\n\n\n\n\n\n\n\n\nmedian income ($1,000s)\n\n\n-0.158*\n\n\n\n\n\n\n(0.006)\n\n\n\n\n\n\n\n\n\n\nConstant\n\n\n8.337*\n\n\n\n\n\n\n(0.351)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservations\n\n\n3,111\n\n\n\n\nAdjusted R2\n\n\n0.203\n\n\n\n\n\n\n\n\nNote:\n\n\n* p&lt;0.05\n\n\n\n\n\nThe coefficient/slope for county income, \\(-0.158\\), is starred. This indicates that it is a statistically significant coefficient.\nThe star indicates that we believe that the direction of the best fit line/the sign of the coefficient is not zero with at least 95% confidence.\nThe confidence threshold here is 95% because \\(p&lt;0.05\\). If the p-value were set to 0.01, we would be working with a 99% confidence threshold. If \\(p&lt;0.001\\), then the confidence threshold would be 99.9%.\n\nAdditional notes:\n\nNot all regression tables use stars to indicate statistical significance. You can roughly calculate whether the coefficient/slope will be starred by using the number in parentheses below the coefficient. This is the standard error, a measure of confidence in the coefficient. If \\(2*(\\text{standard error}) &lt; |\\text{coefficient}|\\), then there is likely to be a star on the coefficient.\nAs shown below, this inequality is true in this case, so there is a star on \\(-0.158\\).\n\n\\[\\begin{align}\n2*(\\text{standard error}) &&lt; |\\text{coefficient}| \\\\\n2*(0.006) &&lt; |-0.158|\\\\\n0.012 &&lt; 0.158\\\\\n\\end{align}\\]\n\nIn general, the coefficient for the constant term is ignored regardless of its statistical significance.",
+    "crumbs": [
+      "A simple linear regression",
+      "Step 1: Statistical Significance"
+    ]
+  },
+  {
+    "objectID": "05_step2_direction.html",
+    "href": "05_step2_direction.html",
+    "title": "Step 2: Direction of Effect",
+    "section": "",
+    "text": "Statistical significance only shows whether we can be confident that the coefficient is non-zero. However, we also have information about the direction of the effect, i.e. whether it is likely that the coefficient is positive or negative.\n\n\n\n\n\n\n\n\n\n\n% shift to Trump, 2012-2016\n\n\n\n\n\n\n\n\nmedian income ($1,000s)\n\n\n-0.158*\n\n\n\n\n\n\n(0.006)\n\n\n\n\n\n\n\n\n\n\nConstant\n\n\n8.337*\n\n\n\n\n\n\n(0.351)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservations\n\n\n3,111\n\n\n\n\nAdjusted R2\n\n\n0.203\n\n\n\n\n\n\n\n\nNote:\n\n\n* p&lt;0.05\n\n\n\n\n\nDue to technicalities regarding “one-sided” versus “two-sided” confidence intervals, a p-value of \\(0.05\\) produces a 95% confidence that the coefficient is non-zero, and a 90% confidence that the coefficient’s sign is correct.\nThere is a negative relationship between income and shifting to Trump. Because it is starred with \\(p&lt;0.05\\), we think, with 90% confidence, this negative sign is not due to chance alone.\nThis value of the coefficient, \\(-0.158\\), is called the estimated effect size of county median income on shifting to Trump between 2012 and 2016.\nWe cannot be confident in the exact value of this coefficient. We can only be confident that the direction is negative.\nIn technical terms, we have rejected the null hypothesis that the coefficient is zero, and accept the alternate hypothesis that the coefficient is negative.",
+    "crumbs": [
+      "A simple linear regression",
+      "Step 2: Direction of Effect"
+    ]
+  },
+  {
+    "objectID": "06_step3_effect_size.html",
+    "href": "06_step3_effect_size.html",
+    "title": "Step 3: Substantive Significance/Effect Size",
+    "section": "",
+    "text": "Statistics can provide relatively concrete confidence intervals about whether the coefficient is unlikely to be zero and the direction of that coefficient. We can also use the numeric value of the coefficient to make imperfect guesses about the magnitude of the effect. The method for making these guesses with linear regressions is described below.\n\n\n\n\n\n\n\n\n\n\n% shift to Trump, 2012-2016\n\n\n\n\n\n\n\n\nmedian income ($1,000s)\n\n\n-0.158*\n\n\n\n\n\n\n(0.006)\n\n\n\n\n\n\n\n\n\n\nConstant\n\n\n8.337*\n\n\n\n\n\n\n(0.351)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservations\n\n\n3,111\n\n\n\n\nAdjusted R2\n\n\n0.203\n\n\n\n\n\n\n\n\nNote:\n\n\n* p&lt;0.05\n\n\n\n\nThe regression function, including the estimated coefficients, is\n\\[\\begin{align}\ny &= \\beta x + \\beta_0 + \\epsilon \\\\\n\\text{shift to Trump} & = -0.158 * \\text{median income (\\$1,000s)} + 8.337 + \\epsilon.\n\\end{align}\\]\nSome simple calculations provide an imperfect guess about the substantive effect size for the coefficient on median income.\n\nOur best guess is that a $1,000 increase in county median income is associated with a -0.158% shift to Trump between 2012 and 2016.\nLooking at the scatterplot, the range of the values for county median income is from roughly $25,000 to $125,000. These points have been marked with red xes. This change in county median income is 100 units. So a county at the top end of the spectrum shifts to Trump by around \\(100*0.158\\% = 15.8\\%\\) less than a county at the highest income levels. If the best guess is close to being correct, this is a substantial change.\nNote: Statistical significance and substantive significance are different concepts. A statistically significant change in the outcome does not necessarily imply a substantively significant change.",
+    "crumbs": [
+      "A simple linear regression",
+      "Step 3: Substantive Significance/Effect Size"
+    ]
+  },
+  {
+    "objectID": "07_multiplereg_equation.html",
+    "href": "07_multiplereg_equation.html",
+    "title": "A multiple linear regression",
+    "section": "",
+    "text": "A multiple linear regression is an expansion of a simple linear regression. It creates a flat regression surface, where that regression surface has as many dimensions as there are \\(x\\) variables in the equation. We can visualize a regression surface with two \\(x\\) variables using a 3 dimensional image, as shown below. Since we live in a three dimensional world, visualizations of regression surfaces with more than two \\(x\\) variables tend to be very difficult/impossible interpret.\nIn a multiple linear regression function,\n\n\\(y\\) is the outcome/dependent variable,\n\\(n\\) is the number of \\(x\\) variables,\n\\(x_i\\), where \\(i \\in \\{1,n\\}\\), is an explanatory/independent variable,\n\\(\\beta_i\\) is a coefficient for the corresponding \\(x_i\\) variable,\n\\(\\beta_0\\) is the y intercept, and\n\\(\\epsilon\\) is the error term that captures our uncertainty over the estimated values.\n\nIn the case of two \\(x\\) variables, as in the example shown next, the function can be expressed as\n\\[\\begin{align}\ny &= \\beta_1 x_1 + \\beta_2 x_2 + \\beta_0 + \\epsilon.\n\\end{align}\\]\nThe regression surface for the example used in this section is shown in the interactive graphic below.\n\nHover over any point to see information about the county that point represents.\nClick and drag on the graphic to rotate it.\nWhen needed, you can reset the image to its starting point. Hover over the image and click on the house symbol at the top right above the graphic title. Alternately, you can reload the page.\nThe regression surface is shown in the flat dark blue surface.\nThe gray curved surfaces above and below the regression surface are the 95% confidence intervals.\n\n\n\n\n\n\n\nFor those primarily interested in a visualization of marginal effects, jump to Step 2: Direction of Each Marginal Effect.\nNote that nonlinear regression functions exist, and are more complex than a straight line or flat regression surface. The substantive interpretation of these nonlinear regression surfaces is more complex than the interpretation of a flat regression surface/line, but the interpretation of statistical significance remains the same.",
+    "crumbs": [
+      "A multiple linear regression"
+    ]
+  },
+  {
+    "objectID": "08_multiplereg_step0_substantive_meaning.html",
+    "href": "08_multiplereg_step0_substantive_meaning.html",
+    "title": "Step 0: Substantive Meaning",
+    "section": "",
+    "text": "The example used in to demonstrate a multiple linear regression is a small expansion of the example used for a simple linear regression. It shows the relationship between how much county level voting shifted towards Donald Trump in 2016 based on county level income as well as county level education. The multiple linear regression function can be expressed as\n\\[\\begin{align}\ny                     &=  \\beta_1    x_1                             + \\beta_2 x_2 +                            \\beta_0 + \\epsilon\\\\\n\\text{shift to Trump} & = \\beta_1 *  \\text{median income (\\$1,000s)} + \\beta_2 * \\text{\\% college experience} + \\beta_0 + \\epsilon,\n\\end{align}\\]\nwhere\n\nthe unit of observation is one county,\n\\(y\\) represents the shift to Trump,\n\nHow much more did the county vote for Trump in 2016 than it voted for Romney in 2012.\n\n\\(x_1\\) represents county median income ($1,000s), and\n\\(x_2\\) represents county % college experience.\n\nThe percent of the county with at least some college experience, regardless of whether they earned a degree.\n\n\nThe regression results appear in the last column of the table below. The results from the simple linear regression are also included, both to emphasize that the coefficient for county median income changed and because it is common practice to include results from different regression models in the same table.\n\n\n\n\n\n\n\n\n\n\n% shift to Trump, 2012-2016\n\n\n\n\n\n\n\n\nCounty median income ($1,000s)\n\n\n-0.158*\n\n\n-0.013\n\n\n\n\n\n\n(0.006)\n\n\n(0.007)\n\n\n\n\n\n\n\n\n\n\n\n\nCounty college experience\n\n\n\n\n-0.344*\n\n\n\n\n\n\n\n\n(0.012)\n\n\n\n\n\n\n\n\n\n\n\n\nConstant\n\n\n8.337*\n\n\n20.103*\n\n\n\n\n\n\n(0.351)\n\n\n(0.512)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservations\n\n\n3,111\n\n\n3,111\n\n\n\n\nAdjusted R2\n\n\n0.203\n\n\n0.371\n\n\n\n\n\n\n\n\nNote:\n\n\n* p&lt;0.05\n\n\n\n\nThe regression function, including the estimates for the best fit regression surface, looks like this:\n\\[\\begin{align}\n\\text{shift to Trump} & = -0.013 *  \\text{median income (\\$1,000s)} - 0.344 * \\text{\\% college experience} + 20.103 + \\epsilon.\n\\end{align}\\]",
+    "crumbs": [
+      "A multiple linear regression",
+      "Step 0: Substantive Meaning"
+    ]
+  },
+  {
+    "objectID": "09_step1_stat_sig.html",
+    "href": "09_step1_stat_sig.html",
+    "title": "Step 1: Statistical Significance",
+    "section": "",
+    "text": "The interpretation of statistically significant coefficients remains the same as in a simple linear regression. In this example, we interpret two coefficients: county median income and county college experience.\n\n\n\n\n\n\n\n\n\n\n% shift to Trump, 2012-2016\n\n\n\n\n\n\n\n\nCounty median income ($1,000s)\n\n\n-0.158*\n\n\n-0.013\n\n\n\n\n\n\n(0.006)\n\n\n(0.007)\n\n\n\n\n\n\n\n\n\n\n\n\nCounty college experience\n\n\n\n\n-0.344*\n\n\n\n\n\n\n\n\n(0.012)\n\n\n\n\n\n\n\n\n\n\n\n\nConstant\n\n\n8.337*\n\n\n20.103*\n\n\n\n\n\n\n(0.351)\n\n\n(0.512)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservations\n\n\n3,111\n\n\n3,111\n\n\n\n\nAdjusted R2\n\n\n0.203\n\n\n0.371\n\n\n\n\n\n\n\n\nNote:\n\n\n* p&lt;0.05\n\n\n\n\n\nCounty median income\n\nThe coefficient for county income, -0.013. is negative and does NOT have stars.\nThe lack of stars indicates that we are NOT confident that the effect of county income is negative. It could be zero, or it could be positive. We simply do not have enough information to have any confidence in sign of the coefficient.\nNote that the simple linear regression in the first column of numbers, which excludes county education, has a statistically significant coefficient for county median income. The multiple regression with education does not have a statistically significant coefficient for income. Statistical significance and coefficient sizes may change when you add new variables to a regression. These changes can be dramatic when a new variable is correlated with any of the original \\(x\\) variables.\n\n\n\nCounty college experience\n\nThe coefficient for county education, -0.344, is negative and it DOES have stars.\nBecause \\(p &lt; 0.05\\), we are at least 95% confident that the effect of county education is not zero.",
+    "crumbs": [
+      "A multiple linear regression",
+      "Step 1: Statistical Significance"
+    ]
+  },
+  {
+    "objectID": "10_step2_direction.html",
+    "href": "10_step2_direction.html",
+    "title": "Step 2: Direction of Each Marginal Effect",
+    "section": "",
+    "text": "The interpretation of the direction of each coefficient is a bit different than in a simple linear regression. In a simple linear regression, which has one \\(x\\) variable, the coefficient is interpreted the same as a slope in a linear equation. In a multiple regression, the coefficient \\(\\beta_i\\) reported for each variable \\(x_i\\) represents the marginal effect of that variable on the outcome, \\(y\\). The marginal effect shows how much the outcome, \\(y\\), changes as one \\(x\\) variable changes and all other \\(x\\) variables are held constant (i.e. they do not change). These effects are depicted in the image below.\n\n\n\n\n\n\n\n\n\n\n% shift to Trump, 2012-2016\n\n\n\n\n\n\n\n\nCounty median income ($1,000s)\n\n\n-0.013\n\n\n\n\n\n\n(0.007)\n\n\n\n\n\n\n\n\n\n\nCounty college experience\n\n\n-0.344*\n\n\n\n\n\n\n(0.012)\n\n\n\n\n\n\n\n\n\n\nConstant\n\n\n20.103*\n\n\n\n\n\n\n(0.512)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservations\n\n\n3,111\n\n\n\n\nAdjusted R2\n\n\n0.371\n\n\n\n\n\n\n\n\nNote:\n\n\n* p&lt;0.05\n\n\n\n\n\nInterpreting marginal effects\n\n\nThe regression surface, \\(y \\sim x_1 + x_2\\), is shown in blue, with grey confidence intervals. The marginal effects are shown in red and orange lines. Hover over and spin the graphic to examine the effects described below.\n\nThe marginal effect of \\(x_1\\) (county median income) is shown with the red line. It depicts the predicted change in \\(y\\) (shift to Trump) when \\(x_2\\) (county college experience) is held constant. That is, county college experience is held constant at 51.24% in the red line, while county median income values rage from $20k to $135k.\nThe marginal effect of \\(x_2\\) (county college experience) with the orange line. It depicts the predicted change in \\(y\\) (shift to Trump) when \\(x_1\\) (county median income) is held constant.\nIn this visualization, the marginal effect of \\(x_1\\) is shown holding \\(x_2\\) at its mean, and vice versa. Because the marginal effect is the same for any value \\(x_2\\) is set at, this is an arbitrary decision with no meaningful impact on the interpretation of the marginal effects.\n\n\n\nCounty median income\n\nThe coefficient for county income, -0.013, is negative. However, it is not statistically significant at the p-value noted in the regression results, \\(p &lt; 0.05\\). Therefore we are not confident that this effect is negative. The coefficient could be positive or effectively zero\n\n\n\nCounty college experience\n\nThere is a negative relationship between county level education and shifting to Trump. Because it has stars, we think with 90% confidence* that this negative sign is not due to chance alone.\nTherefore, we believe that when county level education increases and county level median income remains constant, there is a decreased shift in the county’s Trump vote.\nThis value of the coefficient, -0.344, is called the estimated effect size of county median income on shifting to Trump between 2012 and 2016.\nWe cannot be confident in the exact value of this coefficient. We can only be confident that the direction is negative.\nIn technical terms, we have rejected the null hypothesis that the coefficient is zero, and accept the alternate hypothesis that the coefficient is negative.\n\n* Recall that when \\(p&lt;0.05\\), we are 95% confident that the coefficient is non-zero, and 90% confident in the sign (positive/negative) of the coefficient.",
+    "crumbs": [
+      "A multiple linear regression",
+      "Step 2: Direction of Each Marginal Effect"
+    ]
+  },
+  {
+    "objectID": "11_step3_effect_size.html",
+    "href": "11_step3_effect_size.html",
+    "title": "Step 3: Substantive Significance/Effect Size",
+    "section": "",
+    "text": "As in a simple linear regression, we can use the numeric values of the coefficients to make imperfect guesses about the magnitudes of their effects. As with interpreting the direction of the effect in a multiple linear regression, we must account for the fact that each coefficient on an \\(x\\) variable is a marginal effect. That is, each coefficient \\(\\beta_i\\) represents the change in \\(y\\) when \\(x_i\\) changes and all other \\(x\\) variables are held constant.\n\n\n\n\n\n\n\n\n\n\n% shift to Trump, 2012-2016\n\n\n\n\n\n\n\n\nCounty median income ($1,000s)\n\n\n-0.158*\n\n\n-0.013\n\n\n\n\n\n\n(0.006)\n\n\n(0.007)\n\n\n\n\n\n\n\n\n\n\n\n\nCounty college experience\n\n\n\n\n-0.344*\n\n\n\n\n\n\n\n\n(0.012)\n\n\n\n\n\n\n\n\n\n\n\n\nConstant\n\n\n8.337*\n\n\n20.103*\n\n\n\n\n\n\n(0.351)\n\n\n(0.512)\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\n\nObservations\n\n\n3,111\n\n\n3,111\n\n\n\n\nAdjusted R2\n\n\n0.203\n\n\n0.371\n\n\n\n\n\n\n\n\nNote:\n\n\n* p&lt;0.05\n\n\n\n\n\nCounty median income\n\nOur best guess is that a $1,000 increase in county median income is associated with a -0.013% shift to Trump between 2012 and 2016 when education levels are held constant.\nWe are not confident that this effect is truly negative, because the coefficient is not statistically significant now that county education levels have been controlled for.\nChanges in statistical significance and effect size can happen when adding controls to a regression, particularly when there is a strong correlation between the \\(x\\) variables.\nBecause we are not confident in the direction of the effect of county median income, we do not attempt to interpret the effect size of county income.\n\n\n\nCounty college experience\n\n\n\nOur best guess is that a 1% increase in county educational levels is associated with a -0.344% shift to Trump between 2012 and 2016 when income levels are held constant. As noted on the prior page, this is a statistically significant effect, so we are confident it is a negative effect, not null or positive.\nThe range of the values for county education is from roughly 20% to 90%. That’s 70 units. So a county at the bottom end of the spectrum has shifts to Trump by around \\(-0.344*70\\% = 24\\)% more than a county at the highest education levels. If the best guess is in the right ballpark, this is a substantively significant change.\nYou can examine this change in the graphic above. The points described in the calculations have been marked with red diamonds. You can spin the graphic and hover over the red diamonds to see that a change of 70% in college experience is associated with a 24% change in the shift to Trump between 2012 and 2016.\nIn this case, the estimated effect of education in this model is both statistically and substantively significant.",
+    "crumbs": [
+      "A multiple linear regression",
+      "Step 3: Substantive Significance/Effect Size"
+    ]
+  }
+]
